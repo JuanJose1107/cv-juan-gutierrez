@@ -11,11 +11,11 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #0b0b0b;
+    background: #0b0b0b;
     color: #e5e5e5;
 }
 
-/* ===== INICIO ===== */
+/* ===== PANTALLA INICIO ===== */
 .inicio {
     height: 100vh;
     background: radial-gradient(circle at top, #1a1a1a, #000);
@@ -27,35 +27,33 @@ body {
 .inicio-box {
     text-align: center;
     padding: 50px;
-    border-radius: 14px;
+    border-radius: 16px;
     background: rgba(0,0,0,0.75);
-    border: 1px solid rgba(212,175,55,0.35);
-    animation: fadeIn 1.5s ease forwards;
+    border: 1px solid rgba(212,175,55,0.4);
+    animation: fadeIn 1.5s ease;
 }
 
 .inicio-box h1 {
     color: #d4af37;
-    letter-spacing: 1px;
 }
 
 .inicio-box p {
-    color: #bfae70;
-    margin-bottom: 25px;
+    color: #c9b56a;
+    margin-bottom: 30px;
 }
 
-/* ===== BOTÓN DORADO ===== */
+/* ===== BOTÓN PRINCIPAL ===== */
 .btn-gold {
     position: relative;
-    padding: 15px 38px;
+    padding: 16px 40px;
     font-size: 16px;
     font-weight: bold;
-    color: #000;
-    background: linear-gradient(135deg, #d4af37, #f5e6a8);
+    background: linear-gradient(135deg, #d4af37, #f6e27a);
     border: none;
     border-radius: 40px;
     cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 0 25px rgba(212,175,55,0.7);
+    box-shadow: 0 0 30px rgba(212,175,55,0.7);
 }
 
 .btn-gold::before {
@@ -65,25 +63,18 @@ body {
     left: -120%;
     width: 120%;
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,215,100,0.9),
-        transparent
-    );
+    background: linear-gradient(120deg, transparent, rgba(255,215,120,.9), transparent);
     animation: goldTrail 2s infinite;
 }
 
 .btn-gold:hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 45px rgba(212,175,55,1);
+    transform: scale(1.05);
 }
 
 /* ===== CV ===== */
 .cv {
     display: none;
     padding: 40px 20px;
-    animation: slideUp 0.9s ease forwards;
 }
 
 .container {
@@ -91,7 +82,7 @@ body {
     margin: auto;
     background: #111;
     padding: 40px;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 1px solid rgba(212,175,55,0.3);
 }
 
@@ -114,13 +105,6 @@ h2 {
     padding-bottom: 6px;
 }
 
-.info p {
-    margin: 6px 0;
-}
-
-ul { padding-left: 20px; }
-li { margin-bottom: 6px; }
-
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -135,20 +119,40 @@ li { margin-bottom: 6px; }
     font-size: 14px;
 }
 
-/* ===== BOTONES DOCUMENTOS ===== */
+/* ===== BOTONES ===== */
 .btn-doc {
     display: inline-block;
     margin-top: 12px;
     padding: 12px 26px;
-    background: transparent;
     border: 1px solid #d4af37;
     color: #d4af37;
     text-decoration: none;
     border-radius: 30px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .btn-doc:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* ===== REFERENCIAS ===== */
+#referencias {
+    display: none;
+    margin-top: 20px;
+}
+
+.btn-toggle {
+    margin-top: 15px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    cursor: pointer;
+}
+
+.btn-toggle:hover {
     background: #d4af37;
     color: #000;
 }
@@ -162,13 +166,8 @@ footer {
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
+    from { opacity: 0; transform: scale(.9); }
     to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes goldTrail {
@@ -180,7 +179,7 @@ footer {
 
 <body>
 
-<!-- ===== INICIO ===== -->
+<!-- INICIO -->
 <div class="inicio" id="inicio">
     <div class="inicio-box">
         <h1>Juan José Gutiérrez Valle</h1>
@@ -189,88 +188,63 @@ footer {
     </div>
 </div>
 
-<!-- ===== CV ===== -->
+<!-- CV -->
 <div class="cv" id="cv">
-    <div class="container">
+<div class="container">
 
-        <img src="img/perfil.jpg" alt="Foto de perfil" class="profile-img">
+<img src="img/perfil.jpg" class="profile-img" alt="Foto">
 
-        <h1>Juan José Gutiérrez Valle</h1>
+<h1>Juan José Gutiérrez Valle</h1>
+<p><strong>Ubicación:</strong> Guatemala</p>
+<p><strong>Teléfono:</strong> +502 5351-0314</p>
+<p><strong>Email:</strong> juangutierrez110707@gmail.com</p>
 
-        <div class="info">
-            <p><strong>Ubicación:</strong> Guatemala</p>
-            <p><strong>Teléfono:</strong> +502 5351-0314</p>
-            <p><strong>Email:</strong> juangutierrez110707@gmail.com</p>
-        </div>
+<h2>Objetivo Profesional</h2>
+<p>Desarrollarme en el área de tecnología y sistemas, aplicando conocimientos en programación,
+bases de datos y herramientas de desarrollo dentro de una empresa tecnológica o institución financiera.</p>
 
-        <h2>Objetivo Profesional</h2>
-        <p>
-            Desarrollarme profesionalmente en el área de tecnología y sistemas,
-            aplicando mis conocimientos en programación, bases de datos y herramientas
-            de desarrollo, con el objetivo de crecer como profesional dentro de una
-            empresa tecnológica o institución financiera.
-        </p>
+<h2>Formación Académica</h2>
+<ul>
+<li>Ingeniería en Sistemas – UMG (1er semestre, en curso)</li>
+<li>Bachiller en Computación Colegio prado verde</li>
+</ul>
 
-        <h2>Perfil Profesional</h2>
-        <p>
-            Bachiller en <strong>Computación</strong> y estudiante del
-            <strong>primer semestre de Ingeniería en Sistemas</strong> en la
-            Universidad Mariano Gálvez (UMG). Con experiencia práctica en entornos
-            bancarios, conocimientos básicos en programación, bases de datos y control
-            de versiones. Persona responsable, organizada y con alto interés en el
-            aprendizaje continuo.
-        </p>
+<h2>Experiencia</h2>
+<p><strong>Banco Industrial – Prácticas</strong></p>
+<ul>
+<li>Apoyo en área de bases de datos</li>
+<li>Consultas en SQL Server</li>
+<li>Soporte a procesos tecnológicos</li>
+</ul>
 
-        <h2>Formación Académica</h2>
-        <ul>
-            <li><strong>Ingeniería en Sistemas</strong> – Universidad Mariano Gálvez (UMG)  
-                <br>Primer semestre (en curso)
-            </li>
-            <li><strong>Bachiller en Computación</strong> – Guatemala</li>
-        </ul>
+<h2>Conocimientos Técnicos</h2>
+<div class="skills">
+<div class="skill">SQL Server</div>
+<div class="skill">Bases de Datos</div>
+<div class="skill">C++ (Básico)</div>
+<div class="skill">Git</div>
+<div class="skill">GitHub</div>
+<div class="skill">Adobe Photoshop</div>
+<div class="skill">Adobe Premiere Pro</div>
+</div>
 
-        <h2>Prácticas Profesionales</h2>
-        <p><strong>Practicante – Área de Tecnología / Base de Datos</strong><br>
-        Banco Industrial – Oficina Central, Guatemala</p>
-        <ul>
-            <li>Apoyo en el área de bases de datos.</li>
-            <li>Uso de SQL Server para consultas y validación de información.</li>
-            <li>Soporte a procesos tecnológicos internos.</li>
-            <li>Trabajo colaborativo con personal técnico.</li>
-        </ul>
+<h2>Documentos</h2>
+<a href="docs/cv_juan_gutierrez.pdf" class="btn-doc" target="_blank">📄 Descargar CV PDF</a>
 
-        <h2>Conocimientos Técnicos</h2>
-        <div class="skills">
-            <div class="skill">SQL Server</div>
-            <div class="skill">Bases de Datos</div>
-            <div class="skill">Consultas SQL</div>
-            <div class="skill">C++ (Básico)</div>
-            <div class="skill">Git & GitHub (Básico)</div>
-            <div class="skill">Programación Básica</div>
-        </div>
+<h2>Referencias</h2>
+<button class="btn-toggle" onclick="toggleRefs()">Mostrar / Ocultar Referencias</button>
 
-        <h2>Idiomas</h2>
-        <div class="skills">
-            <div class="skill">Español (Nativo)</div>
-            <div class="skill">Inglés (Básico)</div>
-        </div>
+<div id="referencias">
+<ul>
+<li><strong>Carlos Claudio López</strong> – Gerente de Tecnología (Banco Industrial)<br>Tel: +502 5715 8255</li>
+<li><strong>Mynor Pensamiento</strong> – Supervisor de Prácticas (Banco Industrial)<br>Tel: +502 5695 6073</li>
+<li><strong>Elvira de Toledo</strong> – Directora (Colegio Prado Verde)<br>Tel: +502 4198 9132</li>
+</ul>
+</div>
 
-        <h2>Documentación</h2>
-        <a href="docs/cv_juan_gutierrez.pdf" class="btn-doc" target="_blank">
-            📄 Descargar CV en PDF
-        </a><br>
-        <a href="docs/antecedentes_penales.pdf" class="btn-doc" target="_blank">
-            📄 Antecedentes 
-        </a><br>
-        <a href="docs/titulo_bachiller.pdf" class="btn-doc" target="_blank">
-            🎓 Título de Bachiller
-        </a>
+<footer>© 2026 — Juan José Gutiérrez Valle</footer>
 
-        <footer>
-            © 2026 — Juan José Gutiérrez Valle
-        </footer>
-
-    </div>
+</div>
 </div>
 
 <script>
@@ -278,7 +252,13 @@ function verCV() {
     document.getElementById("inicio").style.display = "none";
     document.getElementById("cv").style.display = "block";
 }
+
+function toggleRefs() {
+    const refs = document.getElementById("referencias");
+    refs.style.display = refs.style.display === "none" ? "block" : "none";
+}
 </script>
 
 </body>
 </html>
+
